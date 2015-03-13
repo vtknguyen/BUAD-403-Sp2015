@@ -9,6 +9,17 @@ srr <- function(from, to) {
 	return(srr(from, to - 1) + to)
 }
 
+# Recursively print each element in the vector.
+pr <- function(vec) {
+	if(length(vec) == 1) {
+		message(vec[1])
+	}
+	else {
+		message(vec[1])
+		pr(vec[2:length(vec)])
+	}
+}
+
 # Sum range iterative formulation
 sum.range <- function(min.val, max.val) {
 	curr.pos <- min.val
@@ -52,5 +63,37 @@ n.agg <- function(vec, n) {
 	}
 	out.vec
 }
+
+# Print a solution to hanoi tower.
+hanoi <- function(n, strt, finish, other) {
+	if(n == 1) {
+		cat("Move disk from", strt, "to", finish, "\n")
+	}
+	else {
+		hanoi(n - 1, strt, other, finish)
+		cat("Move disk from", strt, "to", finish, "\n")
+		#message("special place!")
+		hanoi(n - 1, other, finish, strt)
+	}
+}
+
+# Simple fibonacci  sequence generator.
+fib <- function(first, second, n) {
+	if(n == 1) { return(first) }
+	if(n == 2) { return(second) }
+	else { return(fib(first, second, n - 1) + fib(first, second, n - 2)) }
+}
+
+# Basic summarizer method.
+df.summarize <- function(dframe) {
+	for(colmn in colnames(dframe)) {
+		vals <- dframe[, colmn]
+		if(is.numeric(vals)) {
+			cat("Column", colmn, ": mean =", mean(vals, na.rm=TRUE),   "\n")
+		}
+	}
+}
+
+
 
 
