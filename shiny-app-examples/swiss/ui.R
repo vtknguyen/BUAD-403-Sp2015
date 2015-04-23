@@ -1,12 +1,6 @@
 # This app allows interactive exploration of Swiss socioeconomic
 # relationships.
 
-# This is the user-interface definition of a Shiny web application.
-# You can find out more about building applications with Shiny here:
-#
-# http://shiny.rstudio.com
-#
-
 library(shiny)
 data(swiss)
 
