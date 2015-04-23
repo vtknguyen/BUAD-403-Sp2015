@@ -13,8 +13,6 @@ shinyServer(function(input, output) {
     fit <- kmeans(swiss, input$k)
     fitdata <- cbind(swiss, classif=fit$cluster)
     plot(fitdata[,input$selectedAttributes], col=1+fitdata$classif, pch=16)
-    
-    
   })
   
   # OUTPUT 2: Predict Education by slider values

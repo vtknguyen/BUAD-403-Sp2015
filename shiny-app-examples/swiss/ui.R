@@ -33,8 +33,7 @@ shinyUI(fluidPage(
     # Show a plot of the generated distribution
     mainPanel(
       h4("Cluster Plot"),
-      plotOutput("distPlot"),
-      #h5("Predicted Post-secondary Education %:"), 
+      plotOutput("distPlot"), 
       h4(textOutput("predEducation"))
     )
   )
