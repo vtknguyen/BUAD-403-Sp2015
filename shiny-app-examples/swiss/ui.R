@@ -13,7 +13,7 @@ shinyUI(fluidPage(
   sidebarLayout(
     sidebarPanel(
       checkboxGroupInput("selectedAttributes", label = h4("Cluster Attributes Shown"), 
-                         choices = colnames(swiss),#list("Choice 1" = 1, "Choice 2" = 2, "Choice 3" = 3),
+                         choices = colnames(swiss),
                          selected = c("Fertility", "Agriculture", "Catholic")),
       sliderInput("k", "Number of cluster means (k):", min = 2, max = 5, value = 3),
       h4("Predict % Pose-Secondary Education:"),
