@@ -9,7 +9,7 @@ shinyUI(fluidPage(
   # Application title
   titlePanel("Swiss Socioeconomic Exploration (circa 1888)"),
 
-  # Sidebar with a slider input for number of bins
+  # Sidebar with a set of appropriate inputs for cluster plot and regression prediction
   sidebarLayout(
     sidebarPanel(
       checkboxGroupInput("selectedAttributes", label = h4("Cluster Attributes Shown"), 
@@ -30,7 +30,7 @@ shinyUI(fluidPage(
     ),
     
 
-    # Show a plot of the generated distribution
+    # Show the generated results
     mainPanel(
       h4("Cluster Plot"),
       plotOutput("distPlot"), 
